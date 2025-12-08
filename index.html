@@ -121,8 +121,7 @@
         }
         
         .search-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr auto;
+            display: flex;
             gap: 20px;
             align-items: end;
         }
@@ -130,6 +129,7 @@
         .form-group {
             display: flex;
             flex-direction: column;
+            flex: 1;
         }
         
         .form-group label {
@@ -494,64 +494,6 @@
             line-height: 1.5;
         }
         
-        /* Payment Section */
-        .payment-section {
-            background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 30px;
-            border-left: 4px solid var(--success);
-        }
-        
-        .payment-section h3 {
-            color: var(--success);
-            margin-bottom: 15px;
-        }
-        
-        .payment-methods {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-        
-        .payment-method {
-            background-color: white;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            flex: 1;
-            border: 2px solid #ddd;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-        
-        .payment-method:hover, .payment-method.selected {
-            border-color: var(--success);
-            background-color: #f0f9f0;
-        }
-        
-        .payment-method i {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-        
-        /* Escrow Info */
-        .escrow-info {
-            background-color: #e8f5e9;
-            padding: 15px;
-            border-radius: 8px;
-            margin-top: 20px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-        
-        .escrow-info i {
-            color: var(--success);
-            font-size: 1.5rem;
-        }
-        
         /* Footer */
         footer {
             background-color: var(--dark);
@@ -615,7 +557,7 @@
             }
             
             .search-form {
-                grid-template-columns: 1fr;
+                flex-direction: column;
             }
             
             .results-container {
@@ -627,10 +569,6 @@
             }
             
             .oss-actions {
-                flex-direction: column;
-            }
-            
-            .payment-methods {
                 flex-direction: column;
             }
         }
@@ -765,6 +703,27 @@
         .stars .empty {
             color: #ddd;
         }
+        
+        /* Contact Button */
+        .contact-btn {
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 20px auto 0;
+        }
+        
+        .contact-btn:hover {
+            background-color: var(--secondary);
+        }
     </style>
 </head>
 <body>
@@ -813,19 +772,6 @@ s0.parentNode.insertBefore(s1,s0);
                         <input type="text" id="city" placeholder="Inserisci la tua città" value="Milano">
                     </div>
                     
-                    <div class="form-group">
-                        <label for="activity"><i class="fas fa-tasks"></i> Attività Svolte</label>
-                        <select id="activity">
-                            <option value="">Tutte le attività</option>
-                            <option value="anziani">Assistenza Anziani</option>
-                            <option value="disabili">Assistenza Disabili</option>
-                            <option value="alzheimer">Alzheimer/Demenze</option>
-                            <option value="domiciliare">Assistenza Domiciliare</option>
-                            <option value="post-operatoria">Assistenza Post-operatoria</option>
-                            <option value="notturna">Assistenza Notturna</option>
-                        </select>
-                    </div>
-                    
                     <button type="submit" class="search-btn">
                         <i class="fas fa-search"></i> Cerca OSS
                     </button>
@@ -848,8 +794,8 @@ s0.parentNode.insertBefore(s1,s0);
                     <h3>Come Funziona la Piattaforma</h3>
                     <p>La nostra piattaforma è progettata per rendere semplice e veloce la ricerca di Operatori Socio-Sanitari qualificati nella tua zona.</p>
                     
-                    <h4>Passo 1: Ricerca con Filtri Avanzati</h4>
-                    <p>Utilizza i filtri principali (città e attività svolte) per trovare l'OSS perfetto per le tue esigenze specifiche.</p>
+                    <h4>Passo 1: Ricerca per Città</h4>
+                    <p>Inserisci il nome della tua città per trovare tutti gli OSS disponibili nella tua zona.</p>
                     
                     <h4>Passo 2: Consulta Profili e Recensioni</h4>
                     <p>Esplora i profili completi con recensioni verificate e esperienze passate documentate.</p>
@@ -857,8 +803,8 @@ s0.parentNode.insertBefore(s1,s0);
                     <h4>Passo 3: Verifica Disponibilità in Tempo Reale</h4>
                     <p>Controlla la disponibilità aggiornata e prenota direttamente lo slot desiderato.</p>
                     
-                    <h4>Passo 4: Pagamento Sicuro con Escrow</h4>
-                    <p>Paga in modo sicuro attraverso il nostro sistema escrow che protegge entrambe le parti.</p>
+                    <h4>Passo 4: Contatta Direttamente</h4>
+                    <p>Usa la chat in tempo reale per parlare direttamente con l'OSS e concordare i dettagli del servizio.</p>
                 </div>
                 
                 <div class="edit-section">
@@ -866,8 +812,8 @@ s0.parentNode.insertBefore(s1,s0);
                     <div id="how-it-works-edit" style="display: none;">
                         <textarea id="how-it-works-text">La nostra piattaforma è progettata per rendere semplice e veloce la ricerca di Operatori Socio-Sanitari qualificati nella tua zona.
 
-Passo 1: Ricerca con Filtri Avanzati
-Utilizza i filtri principali (città e attività svolte) per trovare l'OSS perfetto per le tue esigenze specifiche.
+Passo 1: Ricerca per Città
+Inserisci il nome della tua città per trovare tutti gli OSS disponibili nella tua zona.
 
 Passo 2: Consulta Profili e Recensioni
 Esplora i profili completi con recensioni verificate e esperienze passate documentate.
@@ -875,8 +821,8 @@ Esplora i profili completi con recensioni verificate e esperienze passate docume
 Passo 3: Verifica Disponibilità in Tempo Reale
 Controlla la disponibilità aggiornata e prenota direttamente lo slot desiderato.
 
-Passo 4: Pagamento Sicuro con Escrow
-Paga in modo sicuro attraverso il nostro sistema escrow che protegge entrambe le parti.</textarea>
+Passo 4: Contatta Direttamente
+Usa la chat in tempo reale per parlare direttamente con l'OSS e concordare i dettagli del servizio.</textarea>
                         <button class="save-btn" onclick="saveSection('how-it-works')">Salva</button>
                         <button class="cancel-btn" onclick="cancelEdit('how-it-works')">Annulla</button>
                     </div>
@@ -1022,10 +968,10 @@ Paga in modo sicuro attraverso il nostro sistema escrow che protegge entrambe le
                     
                     <h4>Perché Scegliere MandamiUno</h4>
                     <ul>
-                        <li><strong>Filtri Avanzati:</strong> Ricerca per città e attività specifiche</li>
+                        <li><strong>Ricerca per Città:</strong> Trova tutti gli OSS disponibili nella tua zona</li>
                         <li><strong>Recensioni Verificate:</strong> Esperienze reali di altri clienti</li>
-                        <li><strong>Disponibilità in Tempo Reale:</strong> Prenotazione istantanea</li>
-                        <li><strong>Pagamento Sicuro:</strong> Sistema escrow che protegge tutti</li>
+                        <li><strong>Disponibilità in Tempo Reale:</strong> Controlla gli slot disponibili</li>
+                        <li><strong>Chat Diretta:</strong> Parla subito con l'OSS tramite chat live</li>
                         <li><strong>Gratuità:</strong> La piattaforma è completamente gratuita per chi cerca assistenza</li>
                     </ul>
                 </div>
@@ -1037,10 +983,10 @@ Paga in modo sicuro attraverso il nostro sistema escrow che protegge entrambe le
 MandamiUno nasce con l'obiettivo di semplificare la ricerca di operatori socio-sanitari qualificati, mettendo in contatto diretto famiglie, strutture e professionisti del settore.
 
 Perché Scegliere MandamiUno
-- Filtri Avanzati: Ricerca per città e attività specifiche
+- Ricerca per Città: Trova tutti gli OSS disponibili nella tua zona
 - Recensioni Verificate: Esperienze reali di altri clienti
-- Disponibilità in Tempo Reale: Prenotazione istantanea
-- Pagamento Sicuro: Sistema escrow che protegge tutti
+- Disponibilità in Tempo Reale: Controlla gli slot disponibili
+- Chat Diretta: Parla subito con l'OSS tramite chat live
 - Gratuità: La piattaforma è completamente gratuita per chi cerca assistenza</textarea>
                         <button class="save-btn" onclick="saveSection('about')">Salva</button>
                         <button class="cancel-btn" onclick="cancelEdit('about')">Annulla</button>
@@ -1105,14 +1051,13 @@ Perché Scegliere MandamiUno
             document.getElementById('searchForm').addEventListener('submit', function(e) {
                 e.preventDefault();
                 const city = document.getElementById('city').value;
-                const activity = document.getElementById('activity').value;
                 
                 if (city.trim() === '') {
                     alert('Per favore inserisci il nome di una città');
                     return;
                 }
                 
-                // Simulate search results for different cities and activities
+                // Simulate search results for different cities
                 const resultsList = document.getElementById('resultsList');
                 let resultsHTML = '';
                 
@@ -1127,8 +1072,7 @@ Perché Scegliere MandamiUno
                         availability: "Lun-Ven 9-19, Sab 9-12",
                         specializations: ["Assistenza anziani", "Alzheimer", "Assistenza domiciliare"],
                         description: "Esperienza decennale nell'assistenza ad anziani con patologie neurodegenerative.",
-                        rating: 4.8,
-                        activities: ["anziani", "alzheimer", "domiciliare"]
+                        rating: 4.8
                     },
                     {
                         id: 2,
@@ -1139,8 +1083,7 @@ Perché Scegliere MandamiUno
                         availability: "Turni notturni, Weekend",
                         specializations: ["Assistenza disabili", "Fisioterapia di base", "Assistenza notturna"],
                         description: "Specializzato in assistenza a persone con disabilità motorie.",
-                        rating: 4.5,
-                        activities: ["disabili", "notturna"]
+                        rating: 4.5
                     },
                     {
                         id: 3,
@@ -1151,15 +1094,13 @@ Perché Scegliere MandamiUno
                         availability: "Lun-Ven part-time",
                         specializations: ["Assistenza domiciliare", "Assistenza post-operatoria", "Medicazione ferite"],
                         description: "Esperta in assistenza domiciliare e post-operatoria.",
-                        rating: 4.9,
-                        activities: ["domiciliare", "post-operatoria"]
+                        rating: 4.9
                     }
                 ];
                 
-                // Filter OSS based on city and activity
+                // Filter OSS based on city
                 const filteredOSS = ossData.filter(oss => {
                     if (!city.toLowerCase().includes('milano')) return false;
-                    if (activity && !oss.activities.includes(activity)) return false;
                     return true;
                 });
                 
@@ -1168,8 +1109,8 @@ Perché Scegliere MandamiUno
                         <div class="oss-card">
                             <div class="oss-info">
                                 <h3>Nessun OSS trovato</h3>
-                                <p>Non sono stati trovati Operatori Socio-Sanitari disponibili con i criteri selezionati.</p>
-                                <p>Prova a modificare i filtri di ricerca.</p>
+                                <p>Non sono stati trovati Operatori Socio-Sanitari disponibili nella città selezionata.</p>
+                                <p>Prova a cercare in un'altra città.</p>
                             </div>
                         </div>
                     `;
@@ -1281,7 +1222,6 @@ Perché Scegliere MandamiUno
                     <div class="tab active" onclick="switchTab('info', this)">Informazioni</div>
                     <div class="tab" onclick="switchTab('reviews', this)">Recensioni (${profile.totalReviews})</div>
                     <div class="tab" onclick="switchTab('availability', this)">Disponibilità</div>
-                    <div class="tab" onclick="switchTab('payment', this)">Prenota & Paga</div>
                 </div>
                 
                 <!-- Info Tab -->
@@ -1350,7 +1290,7 @@ Perché Scegliere MandamiUno
                     <div class="real-time-check">
                         <div>
                             <h4 style="margin-bottom: 5px;">Verifica disponibilità in tempo reale</h4>
-                            <p style="font-size: 0.9rem;">Seleziona uno slot per prenotare immediatamente</p>
+                            <p style="font-size: 0.9rem;">Controlla gli orari disponibili per prenotare</p>
                         </div>
                         <button class="check-availability-btn" onclick="refreshAvailability(${ossId})">
                             <i class="fas fa-sync-alt"></i> Aggiorna
@@ -1361,70 +1301,12 @@ Perché Scegliere MandamiUno
                         <h3>Disponibilità Settimanale</h3>
                         ${availabilityTable}
                     </div>
-                    
-                    <div id="selectedSlotInfo" style="display: none; margin-top: 20px; padding: 15px; background-color: var(--light); border-radius: 8px;">
-                        <h4 style="color: var(--primary); margin-bottom: 10px;">Slot selezionato:</h4>
-                        <p id="selectedSlotText"></p>
-                        <button class="btn btn-primary" style="margin-top: 10px;" onclick="proceedToPayment(${ossId})">
-                            Procedi con il Pagamento
-                        </button>
-                    </div>
                 </div>
                 
-                <!-- Payment Tab -->
-                <div id="paymentTab" class="tab-content">
-                    <div class="payment-section">
-                        <h3>Prenotazione e Pagamento Sicuro</h3>
-                        
-                        <div id="bookingSummary" style="display: none; margin-bottom: 20px; padding: 15px; background-color: white; border-radius: 8px;">
-                            <h4 style="color: var(--primary); margin-bottom: 10px;">Riepilogo Prenotazione</h4>
-                            <p id="bookingDetails"></p>
-                            <p><strong>Totale stimato:</strong> <span id="bookingTotal">€45-€55</span> (2.5 ore)</p>
-                        </div>
-                        
-                        <div class="escrow-info">
-                            <i class="fas fa-shield-alt"></i>
-                            <div>
-                                <h4 style="margin-bottom: 5px;">Pagamento protetto da Escrow</h4>
-                                <p style="font-size: 0.9rem;">Il pagamento viene trattenuto da MandamiUno e rilasciato all'OSS solo dopo la conferma del servizio completato. Garantisce sicurezza per entrambe le parti.</p>
-                            </div>
-                        </div>
-                        
-                        <h4 style="margin-top: 25px; margin-bottom: 15px;">Scegli Metodo di Pagamento</h4>
-                        <div class="payment-methods">
-                            <div class="payment-method" onclick="selectPaymentMethod('card', this)">
-                                <i class="fas fa-credit-card"></i>
-                                <p>Carta di Credito</p>
-                            </div>
-                            <div class="payment-method" onclick="selectPaymentMethod('paypal', this)">
-                                <i class="fab fa-paypal"></i>
-                                <p>PayPal</p>
-                            </div>
-                            <div class="payment-method" onclick="selectPaymentMethod('bank', this)">
-                                <i class="fas fa-university"></i>
-                                <p>Bonifico</p>
-                            </div>
-                        </div>
-                        
-                        <div id="paymentForm" style="display: none; margin-top: 20px; padding: 20px; background-color: white; border-radius: 8px;">
-                            <h4 style="color: var(--primary); margin-bottom: 15px;">Dati di Pagamento</h4>
-                            <div style="display: grid; gap: 15px;">
-                                <input type="text" placeholder="Nome sulla carta" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-                                <input type="text" placeholder="Numero carta" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                                    <input type="text" placeholder="MM/AA" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-                                    <input type="text" placeholder="CVV" style="padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
-                                </div>
-                            </div>
-                            <button class="btn btn-success" style="margin-top: 20px; width: 100%;" onclick="processPayment(${ossId})">
-                                <i class="fas fa-lock"></i> Paga in Sicurezza
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--light);">
-                    <button class="btn btn-primary" onclick="contactOSS(${ossId})">Contatta ${profile.name.split(' ')[0]}</button>
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 2px solid var(--light); text-align: center;">
+                    <button class="contact-btn" onclick="openChat(${ossId})">
+                        <i class="fas fa-comments"></i> Contatta ${profile.name.split(' ')[0]} via Chat
+                    </button>
                 </div>
             `;
             
@@ -1491,7 +1373,7 @@ Perché Scegliere MandamiUno
             return stars;
         }
         
-        // Generate availability table with clickable slots
+        // Generate availability table
         function generateAvailabilityTable(ossId) {
             // Mock availability data
             const availabilityData = {
@@ -1543,7 +1425,7 @@ Perché Scegliere MandamiUno
                 if (slots && slots.length > 0) {
                     tableHTML += `
                         <td class="available">
-                            ${slots.map(slot => `<span class="time-slot" data-day="${day}" data-slot="${slot}" onclick="selectTimeSlot('${day}', '${slot}', ${ossId})">${slot}</span>`).join('<br>')}
+                            ${slots.map(slot => `<span class="time-slot">${slot}</span>`).join('<br>')}
                         </td>
                     `;
                 } else {
@@ -1562,78 +1444,7 @@ Perché Scegliere MandamiUno
         
         // Initialize slot selection
         function initializeSlotSelection() {
-            const slots = document.querySelectorAll('.time-slot');
-            slots.forEach(slot => {
-                slot.addEventListener('click', function() {
-                    // Remove selection from all slots
-                    slots.forEach(s => s.classList.remove('selected-slot'));
-                    // Add selection to clicked slot
-                    this.classList.add('selected-slot');
-                });
-            });
-        }
-        
-        // Select time slot
-        function selectTimeSlot(day, slot, ossId) {
-            const selectedSlotInfo = document.getElementById('selectedSlotInfo');
-            const selectedSlotText = document.getElementById('selectedSlotText');
-            
-            selectedSlotText.textContent = `${day} ${slot}`;
-            selectedSlotInfo.style.display = 'block';
-            
-            // Switch to payment tab
-            setTimeout(() => {
-                switchTab('payment');
-                updateBookingSummary(day, slot, ossId);
-            }, 500);
-        }
-        
-        // Update booking summary
-        function updateBookingSummary(day, slot, ossId) {
-            const bookingSummary = document.getElementById('bookingSummary');
-            const bookingDetails = document.getElementById('bookingDetails');
-            const bookingTotal = document.getElementById('bookingTotal');
-            
-            const profiles = {
-                1: { name: "Maria Rossi", hourlyRate: "€18-22/ora" },
-                2: { name: "Giuseppe Verdi", hourlyRate: "€20-25/ora" },
-                3: { name: "Laura Bianchi", hourlyRate: "€16-20/ora" }
-            };
-            
-            const profile = profiles[ossId] || profiles[1];
-            const [start, end] = slot.split('-');
-            const hours = calculateHours(start, end);
-            const rateRange = profile.hourlyRate.match(/\d+/g);
-            const minRate = parseInt(rateRange[0]);
-            const maxRate = parseInt(rateRange[1]);
-            const minTotal = hours * minRate;
-            const maxTotal = hours * maxRate;
-            
-            bookingDetails.innerHTML = `
-                <strong>OSS:</strong> ${profile.name}<br>
-                <strong>Giorno:</strong> ${day}<br>
-                <strong>Orario:</strong> ${slot} (${hours} ore)<br>
-                <strong>Tariffa:</strong> ${profile.hourlyRate}
-            `;
-            
-            bookingTotal.textContent = `€${minTotal}-€${maxTotal}`;
-            bookingSummary.style.display = 'block';
-        }
-        
-        // Calculate hours from time slot
-        function calculateHours(start, end) {
-            const [startHour, startMin] = start.split(':').map(Number);
-            const [endHour, endMin] = end.split(':').map(Number);
-            
-            let hours = endHour - startHour;
-            let minutes = endMin - startMin;
-            
-            if (minutes < 0) {
-                hours--;
-                minutes += 60;
-            }
-            
-            return hours + (minutes / 60);
+            // Slot selection is now simplified - no payment processing
         }
         
         // Switch tabs
@@ -1658,27 +1469,8 @@ Perché Scegliere MandamiUno
             document.getElementById(tabName + 'Tab').classList.add('active');
         }
         
-        // Select payment method
-        let selectedPaymentMethod = null;
-        
-        function selectPaymentMethod(method, element) {
-            document.querySelectorAll('.payment-method').forEach(el => {
-                el.classList.remove('selected');
-            });
-            element.classList.add('selected');
-            selectedPaymentMethod = method;
-            
-            // Show payment form
-            document.getElementById('paymentForm').style.display = 'block';
-        }
-        
-        // Process payment
-        function processPayment(ossId) {
-            if (!selectedPaymentMethod) {
-                alert('Seleziona un metodo di pagamento');
-                return;
-            }
-            
+        // Open Tawk.to chat
+        function openChat(ossId) {
             const profiles = {
                 1: { name: "Maria Rossi" },
                 2: { name: "Giuseppe Verdi" },
@@ -1687,15 +1479,27 @@ Perché Scegliere MandamiUno
             
             const profile = profiles[ossId] || profiles[1];
             
-            // Simulate payment processing
-            alert(`Pagamento in elaborazione tramite ${selectedPaymentMethod === 'card' ? 'Carta di Credito' : selectedPaymentMethod === 'paypal' ? 'PayPal' : 'Bonifico'}...\n\nIl pagamento è protetto dal nostro sistema escrow. I fondi verranno trattenuti fino alla conferma del servizio completato.\n\nPrenotazione confermata con ${profile.name}!`);
+            // Open Tawk.to chat widget
+            if (typeof Tawk_API !== 'undefined') {
+                Tawk_API.maximize();
+                
+                // Optionally send a predefined message
+                setTimeout(() => {
+                    Tawk_API.setAttributes({
+                        'name': 'Cliente MandamiUno',
+                        'email': '',
+                        'hash': 'hash'
+                    }, function(error){});
+                    
+                    // Send initial message with OSS name
+                    Tawk_API.sendMessage(`Salve, sono interessato/a a contattare ${profile.name} per informazioni sui servizi OSS.`);
+                }, 1000);
+            } else {
+                alert('La chat è momentaneamente non disponibile. Riprova più tardi.');
+            }
             
+            // Close modal
             closeModal();
-        }
-        
-        // Proceed to payment
-        function proceedToPayment(ossId) {
-            switchTab('payment');
         }
         
         // Refresh availability
@@ -1713,22 +1517,14 @@ Perché Scegliere MandamiUno
             }, 100);
         }
         
-        // Contact OSS
+        // Contact OSS via chat
         function contactOSS(ossId) {
-            const profiles = {
-                1: { name: "Maria Rossi" },
-                2: { name: "Giuseppe Verdi" },
-                3: { name: "Laura Bianchi" }
-            };
-            
-            const profile = profiles[ossId] || profiles[1];
-            alert(`Contatto per ${profile.name}\n\nIn un'applicazione reale, qui si aprirebbe:\n- Modulo di contatto diretto\n- Chat in tempo reale\n- Chiamata VoIP\n- Sistema di messaggistica interno`);
+            openChat(ossId);
         }
         
         // Close modal
         function closeModal() {
             document.getElementById('profileModal').style.display = 'none';
-            selectedPaymentMethod = null;
         }
         
         // Close modal when clicking outside
@@ -1736,7 +1532,6 @@ Perché Scegliere MandamiUno
             const modal = document.getElementById('profileModal');
             if (event.target === modal) {
                 modal.style.display = 'none';
-                selectedPaymentMethod = null;
             }
         }
         

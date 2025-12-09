@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MandamiUno - Trova OSS nelle vicinanze</title>
+    <title>MandamiUno - Trova Caregiver nelle vicinanze</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
@@ -197,8 +197,8 @@
             margin-top: 40px;
         }
         
-        /* OSS Card */
-        .oss-card {
+        /* Caregiver Card */
+        .caregiver-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
@@ -208,12 +208,12 @@
             position: relative;
         }
         
-        .oss-card:hover {
+        .caregiver-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
         
-        .oss-rating {
+        .caregiver-rating {
             position: absolute;
             top: 25px;
             right: 25px;
@@ -227,7 +227,7 @@
             color: var(--dark);
         }
         
-        .oss-info h3 {
+        .caregiver-info h3 {
             color: var(--primary);
             margin-bottom: 15px;
             font-size: 1.5rem;
@@ -236,7 +236,7 @@
             padding-right: 80px;
         }
         
-        .oss-details {
+        .caregiver-details {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 15px;
@@ -259,7 +259,7 @@
             margin-top: 5px;
         }
         
-        .oss-specializations {
+        .caregiver-specializations {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
@@ -273,7 +273,7 @@
             font-size: 0.9rem;
         }
         
-        .oss-actions {
+        .caregiver-actions {
             display: flex;
             gap: 10px;
             margin-top: 20px;
@@ -525,11 +525,11 @@
                 grid-template-columns: 1fr;
             }
             
-            .oss-details {
+            .caregiver-details {
                 grid-template-columns: 1fr;
             }
             
-            .oss-actions {
+            .caregiver-actions {
                 flex-direction: column;
             }
         }
@@ -559,7 +559,7 @@
             font-weight: bold;
         }
         
-        .create-oss-btn {
+        .create-caregiver-btn {
             background-color: var(--success);
             color: white;
             padding: 10px 20px;
@@ -569,7 +569,7 @@
             transition: background-color 0.3s;
         }
         
-        .create-oss-btn:hover {
+        .create-caregiver-btn:hover {
             background-color: #45a049;
         }
         
@@ -670,7 +670,7 @@
                 <ul>
                     <li><a href="#" class="active">Home</a></li>
                     <li><a href="#how-it-works">Come Funziona</a></li>
-                    <li><a href="#find-oss">Trova OSS</a></li>
+                    <li><a href="#find-caregiver">Trova Caregiver</a></li>
                     <li><a href="#about">Chi Siamo</a></li>
                     <li class="user-actions" id="userActions">
                         <!-- Sarà popolato dinamicamente da JavaScript -->
@@ -684,8 +684,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Trova OSS qualificati nelle tue vicinanze</h2>
-            <p>Piattaforma dedicata a connettere famiglie e strutture con Operatori Socio-Sanitari disponibili nella tua zona.</p>
+            <h2>Trova Caregiver qualificati nelle tue vicinanze</h2>
+            <p>Piattaforma dedicata a connettere famiglie e strutture con Caregiver disponibili nella tua zona.</p>
             
             <!-- Search Box -->
             <div class="search-box">
@@ -696,7 +696,7 @@
                     </div>
                     
                     <button type="submit" class="search-btn">
-                        <i class="fas fa-search"></i> Cerca OSS
+                        <i class="fas fa-search"></i> Cerca Caregiver
                     </button>
                 </form>
             </div>
@@ -709,18 +709,18 @@
         <section id="how-it-works">
             <div class="section-title">
                 <h2>Come Funziona</h2>
-                <p>Scopri come trovare l'OSS giusto per le tue esigenze in pochi semplici passi</p>
+                <p>Scopri come trovare il Caregiver giusto per le tue esigenze in pochi semplici passi</p>
             </div>
             
             <div class="about-section">
                 <div id="how-it-works-content">
                     <h3>Per le Famiglie e Strutture</h3>
-                    <p>1. <strong>Cerca per città</strong> gli OSS disponibili nella tua zona</p>
+                    <p>1. <strong>Cerca per città</strong> i Caregiver disponibili nella tua zona</p>
                     <p>2. <strong>Consulta i profili</strong> completi con recensioni verificate</p>
-                    <p>3. <strong>Contatta direttamente</strong> l'OSS tramite chat live</p>
+                    <p>3. <strong>Contatta direttamente</strong> il Caregiver tramite chat live</p>
                     <p>4. <strong>Organizza il servizio</strong> concordando tempi e modalità</p>
                     
-                    <h3 style="margin-top: 30px;">Per gli Operatori Socio-Sanitari</h3>
+                    <h3 style="margin-top: 30px;">Per i Caregiver</h3>
                     <p>1. <strong>Crea un account gratuito</strong> in pochi minuti</p>
                     <p>2. <strong>Compila il tuo profilo</strong> con esperienza e specializzazioni</p>
                     <p>3. <strong>Imposta la tua disponibilità</strong> oraria e territoriale</p>
@@ -729,17 +729,17 @@
             </div>
         </section>
         
-        <!-- Find OSS Section -->
-        <section id="find-oss" style="margin-top: 80px;">
+        <!-- Find Caregiver Section -->
+        <section id="find-caregiver" style="margin-top: 80px;">
             <div class="section-title">
-                <h2>OSS Disponibili</h2>
-                <p>Consulta i profili degli OSS disponibili nella tua città</p>
+                <h2>Caregiver Disponibili</h2>
+                <p>Consulta i profili dei Caregiver disponibili nella tua città</p>
             </div>
             
             <div class="results-container" id="resultsList">
                 <div class="loading">
                     <div class="spinner"></div>
-                    <p>Caricamento profili OSS...</p>
+                    <p>Caricamento profili Caregiver...</p>
                 </div>
             </div>
         </section>
@@ -754,13 +754,13 @@
             <div class="about-section">
                 <div id="about-content">
                     <h3>La Nostra Missione</h3>
-                    <p>MandamiUno nasce con l'obiettivo di semplificare la ricerca di operatori socio-sanitari qualificati, mettendo in contatto diretto famiglie, strutture e professionisti del settore.</p>
+                    <p>MandamiUno nasce con l'obiettivo di semplificare la ricerca di caregiver qualificati, mettendo in contatto diretto famiglie, strutture e professionisti del settore della cura e assistenza.</p>
                     
                     <h4>Perché Scegliere MandamiUno</h4>
                     <ul>
-                        <li><strong>Ricerca per Città:</strong> Trova tutti gli OSS disponibili nella tua zona</li>
+                        <li><strong>Ricerca per Città:</strong> Trova tutti i Caregiver disponibili nella tua zona</li>
                         <li><strong>Recensioni Verificate:</strong> Esperienze reali di altri clienti</li>
-                        <li><strong>Chat Diretta:</strong> Parla subito con l'OSS tramite chat live</li>
+                        <li><strong>Chat Diretta:</strong> Parla subito con il Caregiver tramite chat live</li>
                         <li><strong>Completamente Gratuito:</strong> Per famiglie e operatori</li>
                         <li><strong>Gestione Semplice:</strong> Profili facili da creare e aggiornare</li>
                     </ul>
@@ -795,14 +795,14 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>MandamiUno</h3>
-                    <p>La piattaforma per trovare Operatori Socio-Sanitari qualificati nella tua città.</p>
+                    <p>La piattaforma per trovare Caregiver qualificati nella tua città.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Link veloci</h3>
                     <ul>
                         <li><a href="#">Home</a></li>
                         <li><a href="#how-it-works">Come Funziona</a></li>
-                        <li><a href="#find-oss">Trova OSS</a></li>
+                        <li><a href="#find-caregiver">Trova Caregiver</a></li>
                         <li><a href="#about">Chi Siamo</a></li>
                     </ul>
                 </div>
@@ -837,12 +837,12 @@
         
         // State variables
         let currentUser = null;
-        let currentOSSProfile = null;
+        let currentCaregiverProfile = null;
         
         // Initialize the app
         document.addEventListener('DOMContentLoaded', function() {
             checkAuthStatus();
-            loadOSSProfiles();
+            loadCaregiverProfiles();
             setupEventListeners();
         });
         
@@ -854,14 +854,14 @@
                 currentUser = user;
                 updateUIForLoggedInUser(user);
                 
-                // Check if user has an OSS profile
-                const { data: ossProfile } = await supabase
-                    .from('oss_profiles')
+                // Check if user has a caregiver profile
+                const { data: caregiverProfile } = await supabase
+                    .from('caregiver_profiles')
                     .select('*')
                     .eq('user_id', user.id)
                     .single();
                 
-                currentOSSProfile = ossProfile;
+                currentCaregiverProfile = caregiverProfile;
             } else {
                 updateUIForLoggedOutUser();
             }
@@ -884,10 +884,10 @@
                 </div>
             `;
             
-            if (!currentOSSProfile) {
-                html += `<a href="#" class="create-oss-btn" onclick="openCreateProfileModal()">Crea Profilo OSS</a>`;
+            if (!currentCaregiverProfile) {
+                html += `<a href="#" class="create-caregiver-btn" onclick="openCreateProfileModal()">Crea Profilo Caregiver</a>`;
             } else {
-                html += `<a href="#" class="create-oss-btn" onclick="openEditProfileModal()">Gestisci Profilo</a>`;
+                html += `<a href="#" class="create-caregiver-btn" onclick="openEditProfileModal()">Gestisci Profilo</a>`;
             }
             
             html += `<button class="btn btn-outline" onclick="logout()">Esci</button>`;
@@ -903,25 +903,25 @@
             `;
         }
         
-        // Load OSS profiles
-        async function loadOSSProfiles() {
+        // Load caregiver profiles
+        async function loadCaregiverProfiles() {
             const resultsList = document.getElementById('resultsList');
             
             try {
-                const { data: ossProfiles, error } = await supabase
-                    .from('oss_profiles')
+                const { data: caregiverProfiles, error } = await supabase
+                    .from('caregiver_profiles')
                     .select('*')
                     .eq('is_published', true);
                 
                 if (error) throw error;
                 
-                if (!ossProfiles || ossProfiles.length === 0) {
+                if (!caregiverProfiles || caregiverProfiles.length === 0) {
                     resultsList.innerHTML = `
-                        <div class="oss-card">
-                            <div class="oss-info">
-                                <h3>Nessun OSS trovato</h3>
-                                <p>Non sono stati trovati Operatori Socio-Sanitari disponibili al momento.</p>
-                                <p>Diventa il primo OSS nella tua città!</p>
+                        <div class="caregiver-card">
+                            <div class="caregiver-info">
+                                <h3>Nessun Caregiver trovato</h3>
+                                <p>Non sono stati trovati Caregiver disponibili al momento.</p>
+                                <p>Diventa il primo Caregiver nella tua città!</p>
                             </div>
                         </div>
                     `;
@@ -929,20 +929,20 @@
                 }
                 
                 let resultsHTML = '';
-                ossProfiles.forEach(profile => {
+                caregiverProfiles.forEach(profile => {
                     const specializations = profile.specializations || [];
                     const specializationsHTML = specializations.map(spec => 
                         `<span class="specialization-tag">${spec}</span>`
                     ).join('');
                     
                     resultsHTML += `
-                        <div class="oss-card" data-oss-id="${profile.id}">
-                            <div class="oss-rating">
+                        <div class="caregiver-card" data-caregiver-id="${profile.id}">
+                            <div class="caregiver-rating">
                                 <i class="fas fa-star"></i> ${profile.rating || 'Nuovo'}
                             </div>
-                            <div class="oss-info">
+                            <div class="caregiver-info">
                                 <h3>${profile.name}</h3>
-                                <div class="oss-details">
+                                <div class="caregiver-details">
                                     <div class="detail-item">
                                         <span class="detail-label">Esperienza:</span>
                                         <span class="detail-value">${profile.experience || 'Non specificata'}</span>
@@ -960,12 +960,12 @@
                                         <span class="detail-value">${profile.availability || 'Da concordare'}</span>
                                     </div>
                                 </div>
-                                <div class="oss-specializations">
+                                <div class="caregiver-specializations">
                                     ${specializationsHTML}
                                 </div>
                                 <p>${profile.description || 'Nessuna descrizione disponibile.'}</p>
                             </div>
-                            <div class="oss-actions">
+                            <div class="caregiver-actions">
                                 <button class="btn btn-primary" onclick="viewProfile('${profile.id}')">Vedi Profilo Completo</button>
                                 <button class="btn btn-outline" onclick="openChat('${profile.id}')">Contatta</button>
                             </div>
@@ -976,7 +976,7 @@
                 resultsList.innerHTML = resultsHTML;
                 
             } catch (error) {
-                console.error('Error loading OSS profiles:', error);
+                console.error('Error loading caregiver profiles:', error);
                 resultsList.innerHTML = `
                     <div class="error-message">
                         <p>Errore nel caricamento dei profili. Riprova più tardi.</p>
@@ -998,8 +998,8 @@
                 }
                 
                 try {
-                    const { data: ossProfiles, error } = await supabase
-                        .from('oss_profiles')
+                    const { data: caregiverProfiles, error } = await supabase
+                        .from('caregiver_profiles')
                         .select('*')
                         .ilike('city', `%${city}%`)
                         .eq('is_published', true);
@@ -1008,12 +1008,12 @@
                     
                     const resultsList = document.getElementById('resultsList');
                     
-                    if (!ossProfiles || ossProfiles.length === 0) {
+                    if (!caregiverProfiles || caregiverProfiles.length === 0) {
                         resultsList.innerHTML = `
-                            <div class="oss-card">
-                                <div class="oss-info">
-                                    <h3>Nessun OSS trovato a ${city}</h3>
-                                    <p>Non sono stati trovati Operatori Socio-Sanitari disponibili in questa città.</p>
+                            <div class="caregiver-card">
+                                <div class="caregiver-info">
+                                    <h3>Nessun Caregiver trovato a ${city}</h3>
+                                    <p>Non sono stati trovati Caregiver disponibili in questa città.</p>
                                 </div>
                             </div>
                         `;
@@ -1021,20 +1021,20 @@
                     }
                     
                     let resultsHTML = '';
-                    ossProfiles.forEach(profile => {
+                    caregiverProfiles.forEach(profile => {
                         const specializations = profile.specializations || [];
                         const specializationsHTML = specializations.map(spec => 
                             `<span class="specialization-tag">${spec}</span>`
                         ).join('');
                         
                         resultsHTML += `
-                            <div class="oss-card" data-oss-id="${profile.id}">
-                                <div class="oss-rating">
+                            <div class="caregiver-card" data-caregiver-id="${profile.id}">
+                                <div class="caregiver-rating">
                                     <i class="fas fa-star"></i> ${profile.rating || 'Nuovo'}
                                 </div>
-                                <div class="oss-info">
+                                <div class="caregiver-info">
                                     <h3>${profile.name}</h3>
-                                    <div class="oss-details">
+                                    <div class="caregiver-details">
                                         <div class="detail-item">
                                             <span class="detail-label">Esperienza:</span>
                                             <span class="detail-value">${profile.experience || 'Non specificata'}</span>
@@ -1052,12 +1052,12 @@
                                             <span class="detail-value">${profile.availability || 'Da concordare'}</span>
                                         </div>
                                     </div>
-                                    <div class="oss-specializations">
+                                    <div class="caregiver-specializations">
                                         ${specializationsHTML}
                                     </div>
                                     <p>${profile.description || 'Nessuna descrizione disponibile.'}</p>
                                 </div>
-                                <div class="oss-actions">
+                                <div class="caregiver-actions">
                                     <button class="btn btn-primary" onclick="viewProfile('${profile.id}')">Vedi Profilo Completo</button>
                                     <button class="btn btn-outline" onclick="openChat('${profile.id}')">Contatta</button>
                                 </div>
@@ -1068,7 +1068,7 @@
                     resultsList.innerHTML = resultsHTML;
                     
                 } catch (error) {
-                    console.error('Error searching OSS profiles:', error);
+                    console.error('Error searching caregiver profiles:', error);
                     alert('Errore nella ricerca. Riprova più tardi.');
                 }
             });
@@ -1189,14 +1189,14 @@
                 updateUIForLoggedInUser(data.user);
                 closeAuthModal();
                 
-                // Check if user has OSS profile
-                const { data: ossProfile } = await supabase
-                    .from('oss_profiles')
+                // Check if user has caregiver profile
+                const { data: caregiverProfile } = await supabase
+                    .from('caregiver_profiles')
                     .select('*')
                     .eq('user_id', data.user.id)
                     .single();
                 
-                currentOSSProfile = ossProfile;
+                currentCaregiverProfile = caregiverProfile;
                 
                 // Show welcome message
                 showMessage('success', `Benvenuto ${data.user.email}!`);
@@ -1290,7 +1290,7 @@
                 if (error) throw error;
                 
                 currentUser = null;
-                currentOSSProfile = null;
+                currentCaregiverProfile = null;
                 updateUIForLoggedOutUser();
                 showMessage('success', 'Logout effettuato con successo!');
                 
@@ -1303,79 +1303,79 @@
         // Open create profile modal
         function openCreateProfileModal() {
             if (!currentUser) {
-                alert('Per favore accedi prima di creare un profilo OSS');
+                alert('Per favore accedi prima di creare un profilo Caregiver');
                 openAuthModal();
                 return;
             }
             
             const authContent = document.getElementById('authContent');
             authContent.innerHTML = `
-                <h2 style="color: var(--primary); margin-bottom: 20px;">Crea il tuo Profilo OSS</h2>
-                <p style="margin-bottom: 20px;">Compila il form per creare il tuo profilo di Operatore Socio-Sanitario.</p>
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Crea il tuo Profilo Caregiver</h2>
+                <p style="margin-bottom: 20px;">Compila il form per creare il tuo profilo di Caregiver.</p>
                 
                 <form id="createProfileForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="ossName">Nome e Cognome *</label>
-                            <input type="text" id="ossName" required placeholder="Mario Rossi">
+                            <label for="caregiverName">Nome e Cognome *</label>
+                            <input type="text" id="caregiverName" required placeholder="Mario Rossi">
                         </div>
                         <div class="form-group">
-                            <label for="ossExperience">Esperienza</label>
-                            <input type="text" id="ossExperience" placeholder="es. 5 anni">
+                            <label for="caregiverExperience">Esperienza</label>
+                            <input type="text" id="caregiverExperience" placeholder="es. 5 anni">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="ossCity">Città *</label>
-                            <input type="text" id="ossCity" required placeholder="Milano">
+                            <label for="caregiverCity">Città *</label>
+                            <input type="text" id="caregiverCity" required placeholder="Milano">
                         </div>
                         <div class="form-group">
-                            <label for="ossZone">Zona/Quartiere</label>
-                            <input type="text" id="ossZone" placeholder="es. Centro">
+                            <label for="caregiverZone">Zona/Quartiere</label>
+                            <input type="text" id="caregiverZone" placeholder="es. Centro">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="ossLanguages">Lingue parlate</label>
-                            <input type="text" id="ossLanguages" placeholder="es. Italiano, Inglese">
+                            <label for="caregiverLanguages">Lingue parlate</label>
+                            <input type="text" id="caregiverLanguages" placeholder="es. Italiano, Inglese">
                         </div>
                         <div class="form-group">
-                            <label for="ossHourlyRate">Tariffa oraria</label>
-                            <input type="text" id="ossHourlyRate" placeholder="es. €15-20/ora">
+                            <label for="caregiverHourlyRate">Tariffa oraria</label>
+                            <input type="text" id="caregiverHourlyRate" placeholder="es. €15-20/ora">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="ossAvailability">Disponibilità</label>
-                        <textarea id="ossAvailability" placeholder="es. Lun-Ven 9-18, Sab 9-13"></textarea>
+                        <label for="caregiverAvailability">Disponibilità</label>
+                        <textarea id="caregiverAvailability" placeholder="es. Lun-Ven 9-18, Sab 9-13"></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="ossSpecializations">Specializzazioni (separate da virgola)</label>
-                        <input type="text" id="ossSpecializations" placeholder="es. Anziani, Alzheimer, Disabilità">
+                        <label for="caregiverSpecializations">Specializzazioni (separate da virgola)</label>
+                        <input type="text" id="caregiverSpecializations" placeholder="es. Anziani, Alzheimer, Disabilità, Assistenti all'infanzia">
                     </div>
                     
                     <div class="form-group">
-                        <label for="ossDescription">Descrizione del profilo</label>
-                        <textarea id="ossDescription" placeholder="Descrivi la tua esperienza, competenze e approccio..."></textarea>
+                        <label for="caregiverDescription">Descrizione del profilo</label>
+                        <textarea id="caregiverDescription" placeholder="Descrivi la tua esperienza, competenze e approccio..."></textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="ossEducation">Formazione e Certificazioni</label>
-                        <textarea id="ossEducation" placeholder="Diplomi, corsi, certificazioni..."></textarea>
+                        <label for="caregiverEducation">Formazione e Certificazioni</label>
+                        <textarea id="caregiverEducation" placeholder="Diplomi, corsi, certificazioni..."></textarea>
                     </div>
                     
                     <div class="form-group">
                         <label>
-                            <input type="checkbox" id="ossPublished" checked>
+                            <input type="checkbox" id="caregiverPublished" checked>
                             Pubblica il profilo (sarà visibile a tutti)
                         </label>
                     </div>
                     
-                    <button type="button" class="btn btn-success" style="width: 100%; margin-top: 20px;" onclick="createOSSProfile()">
-                        <i class="fas fa-save"></i> Crea Profilo OSS
+                    <button type="button" class="btn btn-success" style="width: 100%; margin-top: 20px;" onclick="createCaregiverProfile()">
+                        <i class="fas fa-save"></i> Crea Profilo Caregiver
                     </button>
                     
                     <button type="button" class="btn btn-outline" style="width: 100%; margin-top: 10px;" onclick="closeAuthModal()">
@@ -1389,82 +1389,82 @@
         
         // Open edit profile modal
         function openEditProfileModal() {
-            if (!currentUser || !currentOSSProfile) {
+            if (!currentUser || !currentCaregiverProfile) {
                 alert('Errore nel caricamento del profilo');
                 return;
             }
             
             const authContent = document.getElementById('authContent');
             authContent.innerHTML = `
-                <h2 style="color: var(--primary); margin-bottom: 20px;">Gestisci il tuo Profilo OSS</h2>
-                <p style="margin-bottom: 20px;">Modifica il tuo profilo di Operatore Socio-Sanitario.</p>
+                <h2 style="color: var(--primary); margin-bottom: 20px;">Gestisci il tuo Profilo Caregiver</h2>
+                <p style="margin-bottom: 20px;">Modifica il tuo profilo di Caregiver.</p>
                 
                 <form id="editProfileForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editOssName">Nome e Cognome *</label>
-                            <input type="text" id="editOssName" required value="${currentOSSProfile.name || ''}" placeholder="Mario Rossi">
+                            <label for="editCaregiverName">Nome e Cognome *</label>
+                            <input type="text" id="editCaregiverName" required value="${currentCaregiverProfile.name || ''}" placeholder="Mario Rossi">
                         </div>
                         <div class="form-group">
-                            <label for="editOssExperience">Esperienza</label>
-                            <input type="text" id="editOssExperience" value="${currentOSSProfile.experience || ''}" placeholder="es. 5 anni">
+                            <label for="editCaregiverExperience">Esperienza</label>
+                            <input type="text" id="editCaregiverExperience" value="${currentCaregiverProfile.experience || ''}" placeholder="es. 5 anni">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editOssCity">Città *</label>
-                            <input type="text" id="editOssCity" required value="${currentOSSProfile.city || ''}" placeholder="Milano">
+                            <label for="editCaregiverCity">Città *</label>
+                            <input type="text" id="editCaregiverCity" required value="${currentCaregiverProfile.city || ''}" placeholder="Milano">
                         </div>
                         <div class="form-group">
-                            <label for="editOssZone">Zona/Quartiere</label>
-                            <input type="text" id="editOssZone" value="${currentOSSProfile.zone || ''}" placeholder="es. Centro">
+                            <label for="editCaregiverZone">Zona/Quartiere</label>
+                            <input type="text" id="editCaregiverZone" value="${currentCaregiverProfile.zone || ''}" placeholder="es. Centro">
                         </div>
                     </div>
                     
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="editOssLanguages">Lingue parlate</label>
-                            <input type="text" id="editOssLanguages" value="${currentOSSProfile.languages || ''}" placeholder="es. Italiano, Inglese">
+                            <label for="editCaregiverLanguages">Lingue parlate</label>
+                            <input type="text" id="editCaregiverLanguages" value="${currentCaregiverProfile.languages || ''}" placeholder="es. Italiano, Inglese">
                         </div>
                         <div class="form-group">
-                            <label for="editOssHourlyRate">Tariffa oraria</label>
-                            <input type="text" id="editOssHourlyRate" value="${currentOSSProfile.hourly_rate || ''}" placeholder="es. €15-20/ora">
+                            <label for="editCaregiverHourlyRate">Tariffa oraria</label>
+                            <input type="text" id="editCaregiverHourlyRate" value="${currentCaregiverProfile.hourly_rate || ''}" placeholder="es. €15-20/ora">
                         </div>
                     </div>
                     
                     <div class="form-group">
-                        <label for="editOssAvailability">Disponibilità</label>
-                        <textarea id="editOssAvailability" placeholder="es. Lun-Ven 9-18, Sab 9-13">${currentOSSProfile.availability || ''}</textarea>
+                        <label for="editCaregiverAvailability">Disponibilità</label>
+                        <textarea id="editCaregiverAvailability" placeholder="es. Lun-Ven 9-18, Sab 9-13">${currentCaregiverProfile.availability || ''}</textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="editOssSpecializations">Specializzazioni (separate da virgola)</label>
-                        <input type="text" id="editOssSpecializations" value="${(currentOSSProfile.specializations || []).join(', ')}" placeholder="es. Anziani, Alzheimer, Disabilità">
+                        <label for="editCaregiverSpecializations">Specializzazioni (separate da virgola)</label>
+                        <input type="text" id="editCaregiverSpecializations" value="${(currentCaregiverProfile.specializations || []).join(', ')}" placeholder="es. Anziani, Alzheimer, Disabilità, Assistenti all'infanzia">
                     </div>
                     
                     <div class="form-group">
-                        <label for="editOssDescription">Descrizione del profilo</label>
-                        <textarea id="editOssDescription" placeholder="Descrivi la tua esperienza, competenze e approccio...">${currentOSSProfile.description || ''}</textarea>
+                        <label for="editCaregiverDescription">Descrizione del profilo</label>
+                        <textarea id="editCaregiverDescription" placeholder="Descrivi la tua esperienza, competenze e approccio...">${currentCaregiverProfile.description || ''}</textarea>
                     </div>
                     
                     <div class="form-group">
-                        <label for="editOssEducation">Formazione e Certificazioni</label>
-                        <textarea id="editOssEducation" placeholder="Diplomi, corsi, certificazioni...">${currentOSSProfile.education || ''}</textarea>
+                        <label for="editCaregiverEducation">Formazione e Certificazioni</label>
+                        <textarea id="editCaregiverEducation" placeholder="Diplomi, corsi, certificazioni...">${currentCaregiverProfile.education || ''}</textarea>
                     </div>
                     
                     <div class="form-group">
                         <label>
-                            <input type="checkbox" id="editOssPublished" ${currentOSSProfile.is_published ? 'checked' : ''}>
+                            <input type="checkbox" id="editCaregiverPublished" ${currentCaregiverProfile.is_published ? 'checked' : ''}>
                             Pubblica il profilo (sarà visibile a tutti)
                         </label>
                     </div>
                     
-                    <button type="button" class="btn btn-success" style="width: 100%; margin-top: 20px;" onclick="updateOSSProfile()">
+                    <button type="button" class="btn btn-success" style="width: 100%; margin-top: 20px;" onclick="updateCaregiverProfile()">
                         <i class="fas fa-save"></i> Salva Modifiche
                     </button>
                     
-                    <button type="button" class="btn btn-warning" style="width: 100%; margin-top: 10px;" onclick="deleteOSSProfile()">
+                    <button type="button" class="btn btn-warning" style="width: 100%; margin-top: 10px;" onclick="deleteCaregiverProfile()">
                         <i class="fas fa-trash"></i> Elimina Profilo
                     </button>
                     
@@ -1477,8 +1477,8 @@
             document.getElementById('authModal').style.display = 'flex';
         }
         
-        // Create OSS profile
-        async function createOSSProfile() {
+        // Create caregiver profile
+        async function createCaregiverProfile() {
             if (!currentUser) {
                 alert('Per favore accedi prima di creare un profilo');
                 return;
@@ -1486,17 +1486,17 @@
             
             const profileData = {
                 user_id: currentUser.id,
-                name: document.getElementById('ossName').value,
-                experience: document.getElementById('ossExperience').value,
-                city: document.getElementById('ossCity').value,
-                zone: document.getElementById('ossZone').value,
-                languages: document.getElementById('ossLanguages').value,
-                hourly_rate: document.getElementById('ossHourlyRate').value,
-                availability: document.getElementById('ossAvailability').value,
-                specializations: document.getElementById('ossSpecializations').value.split(',').map(s => s.trim()).filter(s => s),
-                description: document.getElementById('ossDescription').value,
-                education: document.getElementById('ossEducation').value,
-                is_published: document.getElementById('ossPublished').checked
+                name: document.getElementById('caregiverName').value,
+                experience: document.getElementById('caregiverExperience').value,
+                city: document.getElementById('caregiverCity').value,
+                zone: document.getElementById('caregiverZone').value,
+                languages: document.getElementById('caregiverLanguages').value,
+                hourly_rate: document.getElementById('caregiverHourlyRate').value,
+                availability: document.getElementById('caregiverAvailability').value,
+                specializations: document.getElementById('caregiverSpecializations').value.split(',').map(s => s.trim()).filter(s => s),
+                description: document.getElementById('caregiverDescription').value,
+                education: document.getElementById('caregiverEducation').value,
+                is_published: document.getElementById('caregiverPublished').checked
             };
             
             if (!profileData.name || !profileData.city) {
@@ -1506,45 +1506,45 @@
             
             try {
                 const { data, error } = await supabase
-                    .from('oss_profiles')
+                    .from('caregiver_profiles')
                     .insert([profileData])
                     .select()
                     .single();
                 
                 if (error) throw error;
                 
-                currentOSSProfile = data;
+                currentCaregiverProfile = data;
                 updateUIForLoggedInUser(currentUser);
                 closeAuthModal();
-                loadOSSProfiles();
+                loadCaregiverProfiles();
                 
-                showMessage('success', 'Profilo OSS creato con successo!');
+                showMessage('success', 'Profilo Caregiver creato con successo!');
                 
             } catch (error) {
-                console.error('Create OSS profile error:', error);
+                console.error('Create caregiver profile error:', error);
                 alert('Errore nella creazione del profilo: ' + error.message);
             }
         }
         
-        // Update OSS profile
-        async function updateOSSProfile() {
-            if (!currentUser || !currentOSSProfile) {
+        // Update caregiver profile
+        async function updateCaregiverProfile() {
+            if (!currentUser || !currentCaregiverProfile) {
                 alert('Errore nel caricamento del profilo');
                 return;
             }
             
             const profileData = {
-                name: document.getElementById('editOssName').value,
-                experience: document.getElementById('editOssExperience').value,
-                city: document.getElementById('editOssCity').value,
-                zone: document.getElementById('editOssZone').value,
-                languages: document.getElementById('editOssLanguages').value,
-                hourly_rate: document.getElementById('editOssHourlyRate').value,
-                availability: document.getElementById('editOssAvailability').value,
-                specializations: document.getElementById('editOssSpecializations').value.split(',').map(s => s.trim()).filter(s => s),
-                description: document.getElementById('editOssDescription').value,
-                education: document.getElementById('editOssEducation').value,
-                is_published: document.getElementById('editOssPublished').checked,
+                name: document.getElementById('editCaregiverName').value,
+                experience: document.getElementById('editCaregiverExperience').value,
+                city: document.getElementById('editCaregiverCity').value,
+                zone: document.getElementById('editCaregiverZone').value,
+                languages: document.getElementById('editCaregiverLanguages').value,
+                hourly_rate: document.getElementById('editCaregiverHourlyRate').value,
+                availability: document.getElementById('editCaregiverAvailability').value,
+                specializations: document.getElementById('editCaregiverSpecializations').value.split(',').map(s => s.trim()).filter(s => s),
+                description: document.getElementById('editCaregiverDescription').value,
+                education: document.getElementById('editCaregiverEducation').value,
+                is_published: document.getElementById('editCaregiverPublished').checked,
                 updated_at: new Date()
             };
             
@@ -1555,65 +1555,65 @@
             
             try {
                 const { data, error } = await supabase
-                    .from('oss_profiles')
+                    .from('caregiver_profiles')
                     .update(profileData)
-                    .eq('id', currentOSSProfile.id)
+                    .eq('id', currentCaregiverProfile.id)
                     .select()
                     .single();
                 
                 if (error) throw error;
                 
-                currentOSSProfile = data;
+                currentCaregiverProfile = data;
                 closeAuthModal();
-                loadOSSProfiles();
+                loadCaregiverProfiles();
                 
                 showMessage('success', 'Profilo aggiornato con successo!');
                 
             } catch (error) {
-                console.error('Update OSS profile error:', error);
+                console.error('Update caregiver profile error:', error);
                 alert('Errore nell\'aggiornamento del profilo: ' + error.message);
             }
         }
         
-        // Delete OSS profile
-        async function deleteOSSProfile() {
-            if (!currentUser || !currentOSSProfile) {
+        // Delete caregiver profile
+        async function deleteCaregiverProfile() {
+            if (!currentUser || !currentCaregiverProfile) {
                 alert('Errore nel caricamento del profilo');
                 return;
             }
             
-            if (!confirm('Sei sicuro di voler eliminare il tuo profilo OSS? Questa azione non può essere annullata.')) {
+            if (!confirm('Sei sicuro di voler eliminare il tuo profilo Caregiver? Questa azione non può essere annullata.')) {
                 return;
             }
             
             try {
                 const { error } = await supabase
-                    .from('oss_profiles')
+                    .from('caregiver_profiles')
                     .delete()
-                    .eq('id', currentOSSProfile.id);
+                    .eq('id', currentCaregiverProfile.id);
                 
                 if (error) throw error;
                 
-                currentOSSProfile = null;
+                currentCaregiverProfile = null;
                 updateUIForLoggedInUser(currentUser);
                 closeAuthModal();
-                loadOSSProfiles();
+                loadCaregiverProfiles();
                 
                 showMessage('success', 'Profilo eliminato con successo!');
                 
             } catch (error) {
-                console.error('Delete OSS profile error:', error);
+                console.error('Delete caregiver profile error:', error);
                 alert('Errore nell\'eliminazione del profilo: ' + error.message);
             }
         }
         
-        // View OSS profile
-        async function viewProfile(ossId) {
+        // View caregiver profile
+        async function viewProfile(caregiverId) {
             try {
                 const { data: profile, error } = await supabase
-                    .from('oss_profiles')
+                    .from('caregiver_profiles')
                     .select('*')
-                    .eq('id', ossId)
+                    .eq('id', caregiverId)
                     .single();
                 
                 if (error) throw error;
@@ -1644,7 +1644,7 @@
                     
                     <div style="margin-bottom: 25px;">
                         <h3 style="color: var(--primary); margin-bottom: 10px;">Specializzazioni</h3>
-                        <div class="oss-specializations">
+                        <div class="caregiver-specializations">
                             ${specializationsHTML}
                         </div>
                     </div>
@@ -1687,16 +1687,16 @@
         }
         
         // Open chat
-        function openChat(ossId) {
+        function openChat(caregiverId) {
             // Open Tawk.to chat widget
             if (typeof Tawk_API !== 'undefined') {
                 Tawk_API.maximize();
                 
-                // Send initial message with OSS name
+                // Send initial message with caregiver name
                 setTimeout(() => {
-                    // Get OSS name for the message
-                    const ossName = document.querySelector(`[data-oss-id="${ossId}"] h3`)?.textContent || 'Operatore OSS';
-                    Tawk_API.sendMessage(`Salve, sono interessato/a a contattare ${ossName} per informazioni sui servizi OSS.`);
+                    // Get caregiver name for the message
+                    const caregiverName = document.querySelector(`[data-caregiver-id="${caregiverId}"] h3`)?.textContent || 'Caregiver';
+                    Tawk_API.sendMessage(`Salve, sono interessato/a a contattare ${caregiverName} per informazioni sui servizi di assistenza.`);
                 }, 1000);
             } else {
                 alert('La chat è momentaneamente non disponibile. Riprova più tardi.');

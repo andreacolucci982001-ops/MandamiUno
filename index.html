@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MandamiUno - Trova Caregiver nelle vicinanze</title>
+    <title>MandamiUno - Trova Caregiver qualificati nelle tue vicinanze</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
@@ -684,8 +684,8 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Trova Caregiver qualificati nelle tue vicinanze</h2>
-            <p>Piattaforma dedicata a connettere famiglie e strutture con Caregiver disponibili nella tua zona.</p>
+            <h2>Trova caregiver qualificati nelle tue vicinanze</h2>
+            <p>Piattaforma dedicata a connettere famiglie e strutture con caregiver disponibili nella tua zona.</p>
             
             <!-- Search Box -->
             <div class="search-box">
@@ -709,15 +709,15 @@
         <section id="how-it-works">
             <div class="section-title">
                 <h2>Come Funziona</h2>
-                <p>Scopri come trovare il Caregiver giusto per le tue esigenze in pochi semplici passi</p>
+                <p>Scopri come trovare il caregiver giusto per le tue esigenze in pochi semplici passi</p>
             </div>
             
             <div class="about-section">
                 <div id="how-it-works-content">
                     <h3>Per le Famiglie e Strutture</h3>
-                    <p>1. <strong>Cerca per città</strong> i Caregiver disponibili nella tua zona</p>
+                    <p>1. <strong>Cerca per città</strong> i caregiver disponibili nella tua zona</p>
                     <p>2. <strong>Consulta i profili</strong> completi con recensioni verificate</p>
-                    <p>3. <strong>Contatta direttamente</strong> il Caregiver tramite chat live</p>
+                    <p>3. <strong>Contatta direttamente</strong> il caregiver tramite chat live</p>
                     <p>4. <strong>Organizza il servizio</strong> concordando tempi e modalità</p>
                     
                     <h3 style="margin-top: 30px;">Per i Caregiver</h3>
@@ -733,13 +733,13 @@
         <section id="find-caregiver" style="margin-top: 80px;">
             <div class="section-title">
                 <h2>Caregiver Disponibili</h2>
-                <p>Consulta i profili dei Caregiver disponibili nella tua città</p>
+                <p>Consulta i profili dei caregiver disponibili nella tua città</p>
             </div>
             
             <div class="results-container" id="resultsList">
                 <div class="loading">
                     <div class="spinner"></div>
-                    <p>Caricamento profili Caregiver...</p>
+                    <p>Caricamento profili caregiver...</p>
                 </div>
             </div>
         </section>
@@ -754,14 +754,14 @@
             <div class="about-section">
                 <div id="about-content">
                     <h3>La Nostra Missione</h3>
-                    <p>MandamiUno nasce con l'obiettivo di semplificare la ricerca di caregiver qualificati, mettendo in contatto diretto famiglie, strutture e professionisti del settore della cura e assistenza.</p>
+                    <p>MandamiUno nasce con l'obiettivo di semplificare la ricerca di caregiver qualificati, mettendo in contatto diretto famiglie, strutture e professionisti del settore.</p>
                     
                     <h4>Perché Scegliere MandamiUno</h4>
                     <ul>
-                        <li><strong>Ricerca per Città:</strong> Trova tutti i Caregiver disponibili nella tua zona</li>
+                        <li><strong>Ricerca per Città:</strong> Trova tutti i caregiver disponibili nella tua zona</li>
                         <li><strong>Recensioni Verificate:</strong> Esperienze reali di altri clienti</li>
-                        <li><strong>Chat Diretta:</strong> Parla subito con il Caregiver tramite chat live</li>
-                        <li><strong>Completamente Gratuito:</strong> Per famiglie e operatori</li>
+                        <li><strong>Chat Diretta:</strong> Parla subito con il caregiver tramite chat live</li>
+                        <li><strong>Completamente Gratuito:</strong> Per famiglie e caregiver</li>
                         <li><strong>Gestione Semplice:</strong> Profili facili da creare e aggiornare</li>
                     </ul>
                 </div>
@@ -795,7 +795,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>MandamiUno</h3>
-                    <p>La piattaforma per trovare Caregiver qualificati nella tua città.</p>
+                    <p>La piattaforma per trovare caregiver qualificati nella tua città.</p>
                 </div>
                 <div class="footer-section">
                     <h3>Link veloci</h3>
@@ -919,9 +919,9 @@
                     resultsList.innerHTML = `
                         <div class="caregiver-card">
                             <div class="caregiver-info">
-                                <h3>Nessun Caregiver trovato</h3>
-                                <p>Non sono stati trovati Caregiver disponibili al momento.</p>
-                                <p>Diventa il primo Caregiver nella tua città!</p>
+                                <h3>Nessun caregiver trovato</h3>
+                                <p>Non sono stati trovati caregiver disponibili al momento.</p>
+                                <p>Diventa il primo caregiver nella tua città!</p>
                             </div>
                         </div>
                     `;
@@ -1012,8 +1012,8 @@
                         resultsList.innerHTML = `
                             <div class="caregiver-card">
                                 <div class="caregiver-info">
-                                    <h3>Nessun Caregiver trovato a ${city}</h3>
-                                    <p>Non sono stati trovati Caregiver disponibili in questa città.</p>
+                                    <h3>Nessun caregiver trovato a ${city}</h3>
+                                    <p>Non sono stati trovati caregiver disponibili in questa città.</p>
                                 </div>
                             </div>
                         `;
@@ -1303,7 +1303,7 @@
         // Open create profile modal
         function openCreateProfileModal() {
             if (!currentUser) {
-                alert('Per favore accedi prima di creare un profilo Caregiver');
+                alert('Per favore accedi prima di creare un profilo caregiver');
                 openAuthModal();
                 return;
             }
@@ -1311,7 +1311,7 @@
             const authContent = document.getElementById('authContent');
             authContent.innerHTML = `
                 <h2 style="color: var(--primary); margin-bottom: 20px;">Crea il tuo Profilo Caregiver</h2>
-                <p style="margin-bottom: 20px;">Compila il form per creare il tuo profilo di Caregiver.</p>
+                <p style="margin-bottom: 20px;">Compila il form per creare il tuo profilo di caregiver.</p>
                 
                 <form id="createProfileForm">
                     <div class="form-row">
@@ -1354,7 +1354,7 @@
                     
                     <div class="form-group">
                         <label for="caregiverSpecializations">Specializzazioni (separate da virgola)</label>
-                        <input type="text" id="caregiverSpecializations" placeholder="es. Anziani, Alzheimer, Disabilità, Assistenti all'infanzia">
+                        <input type="text" id="caregiverSpecializations" placeholder="es. Anziani, Alzheimer, Disabilità">
                     </div>
                     
                     <div class="form-group">
@@ -1397,7 +1397,7 @@
             const authContent = document.getElementById('authContent');
             authContent.innerHTML = `
                 <h2 style="color: var(--primary); margin-bottom: 20px;">Gestisci il tuo Profilo Caregiver</h2>
-                <p style="margin-bottom: 20px;">Modifica il tuo profilo di Caregiver.</p>
+                <p style="margin-bottom: 20px;">Modifica il tuo profilo di caregiver.</p>
                 
                 <form id="editProfileForm">
                     <div class="form-row">
@@ -1440,7 +1440,7 @@
                     
                     <div class="form-group">
                         <label for="editCaregiverSpecializations">Specializzazioni (separate da virgola)</label>
-                        <input type="text" id="editCaregiverSpecializations" value="${(currentCaregiverProfile.specializations || []).join(', ')}" placeholder="es. Anziani, Alzheimer, Disabilità, Assistenti all'infanzia">
+                        <input type="text" id="editCaregiverSpecializations" value="${(currentCaregiverProfile.specializations || []).join(', ')}" placeholder="es. Anziani, Alzheimer, Disabilità">
                     </div>
                     
                     <div class="form-group">
@@ -1518,7 +1518,7 @@
                 closeAuthModal();
                 loadCaregiverProfiles();
                 
-                showMessage('success', 'Profilo Caregiver creato con successo!');
+                showMessage('success', 'Profilo caregiver creato con successo!');
                 
             } catch (error) {
                 console.error('Create caregiver profile error:', error);
@@ -1582,7 +1582,7 @@
                 return;
             }
             
-            if (!confirm('Sei sicuro di voler eliminare il tuo profilo Caregiver? Questa azione non può essere annullata.')) {
+            if (!confirm('Sei sicuro di voler eliminare il tuo profilo caregiver? Questa azione non può essere annullata.')) {
                 return;
             }
             
